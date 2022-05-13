@@ -24,7 +24,7 @@ const Card = () => {
       {
         Advice ? (<q className="quote">
           {Advice.advice}
-        </q>) : <CircularProgress color="grey" />
+        </q>) : <CircularProgress sx={{color:'hsl(218, 23%, 16%)'}} />
       }
       <div>
         <img className="divider" src={Divider} alt="divider" />

@@ -5,6 +5,7 @@ import './styles/App.css'
 const App = () => {
   return (
     <div className='container'>
+      <h1 hidden>React practice</h1>
       <Card/>
     </div>
   )

@@ -1,0 +1,57 @@
+.wrapper {
+    text-align: center;
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:94%;
+    background-color:hsl(217, 19%, 24%);
+    position: relative;
+    border-radius: 10px;
+    box-shadow:0 30px 30px rgba(29, 28, 28, 0.545);
+}
+
+.title{
+    margin:1.5rem 0;
+    color:hsl(150, 100%, 66%);
+    text-transform: uppercase;
+    font-size:12px;
+    letter-spacing: 3px;
+}
+
+.quote{
+    color: hsl(193, 38%, 86%);
+    font-size: 25px;
+    margin-bottom: 1rem;
+}
+
+.divider{
+    margin: 1rem 0 2rem 0;
+}
+
+.btn {
+    width: 60px;
+    height: 60px;
+    border-radius:50%;
+    display: grid;
+    place-content: center;
+    border-style: none;
+    background-color: hsl(150, 100%, 66%);
+    position: absolute;
+    bottom:-30px;
+    left: 0;
+    transform:translateX(-50%);
+    margin:0 50%;
+}
+.btn:hover{
+    box-shadow: 0 0 35px 0 hsl(150  100%  66% );
+}
+
+@media (min-width:992px) {
+    .wrapper{
+        width: 50ch;
+    }
+    .divider{
+        margin:2rem 0 2rem 0;
+    }
+}

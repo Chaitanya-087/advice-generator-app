@@ -8,23 +8,28 @@ import { CircularProgress } from "@mui/material";
 const Card = () => {
   const [Advice, setAdvice] = useState('')
   const [Click, setClick] = useState(0)
+  const [isLoading,setLoading] = useState(false)
   const url = 'https://api.adviceslip.com/advice';
 
   useEffect(() => {
-    fetch(url)
-      .then(response => {
-        return response.json()
-      })
-      .then(data => setAdvice(data.slip))
+    setLoading(true)
+    const apiGet = async () => {
+      const response = await fetch(url)
+      const data = await response.json()
+      const slip = await data.slip
+      setAdvice(slip)
+      setLoading(false)
+    }
+    apiGet()
   }, [Click])
 
   return (
     <div className="wrapper">
-      <p className="title">advice{'  '}{'#' + Advice.id}</p>
+      <p className="title">advice {'#' + Advice.id}</p>
       {
-        Advice ? (<q className="quote">
+        isLoading ? <CircularProgress /> : <q className="quote">
           {Advice.advice}
-        </q>) : <CircularProgress sx={{color:'hsl(218, 23%, 16%)'}} />
+        </q>
       }
       <div>
         <img className="divider" src={Divider} alt="divider" />
